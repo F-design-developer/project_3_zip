@@ -1,0 +1,119 @@
+:root {
+    --gold: #D4AF37;
+    --dark-bg: #111111;
+    --light-bg: #f8f9fa;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Utility Classes */
+.text-gold {
+    color: var(--gold) !important;
+}
+
+.bg-gold {
+    background-color: var(--gold) !important;
+}
+
+.btn-premium {
+    background-color: var(--gold);
+    color: white;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-premium:hover {
+    background-color: #b8962d;
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--dark-bg) !important;
+    border-bottom: 2px solid var(--gold);
+}
+
+/* Hero Section */
+.slider-img {
+    height: 100vh;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.4);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+@media (max-width:768px) {
+
+    .slider-img {
+        height: 70vh;
+    }
+
+    .carousel-caption h1 {
+        font-size: 2rem;
+    }
+
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+}
+
+/* Car Cards */
+.car-card {
+    transition: 0.3s ease;
+    overflow: hidden;
+    border: none;
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.car-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
+    filter: brightness(80%);
+}
+
+.gallery-item {
+    height: 250px;
+    /* Fixed height for symmetry */
+}
+
+.gallery-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+#services h2 {
+    font-family: 'Poppins';
+}
+
+#gallery,
+.hero_font1,
+#cars,
+#about h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+section {
+    padding: 80px 0;
+}
