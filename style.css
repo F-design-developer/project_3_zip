@@ -1,6 +1,6 @@
 :root {
     --gold: #D4AF37;
-    --dark-bg: #111111;
+    --dark-bg: #111;
     --light-bg: #f8f9fa;
 }
 
@@ -9,38 +9,64 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Utility Classes */
+
+
+/* Navbar */
+.custom-navbar {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--gold);
+    padding: 12px 0;
+}
+
 .text-gold {
-    color: var(--gold) !important;
+    color: var(--gold);
 }
 
-.bg-gold {
-    background-color: var(--gold) !important;
+.navbar .nav-link {
+    color: #fff;
+    font-weight: 500;
+    margin: 0 10px;
+    position: relative;
+    transition: 0.3s;
 }
 
+.navbar .nav-link:hover {
+    color: var(--gold);
+}
+
+.nav-hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: 0.4s;
+}
+
+.nav-hover:hover::after {
+    width: 100%;
+}
+
+/* Button */
 .btn-premium {
-    background-color: var(--gold);
-    color: white;
-    border-radius: 30px;
-    padding: 10px 30px;
+    background: var(--gold);
+    color: #fff;
     font-weight: 600;
+    padding: 8px 22px;
     border: none;
     transition: 0.3s;
 }
 
 .btn-premium:hover {
-    background-color: #b8962d;
-    transform: translateY(-2px);
-    color: white;
+    background: #b8962d;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Navbar */
-.navbar {
-    background-color: var(--dark-bg) !important;
-    border-bottom: 2px solid var(--gold);
-}
-
-/* Hero Section */
+/* Hero Slider */
 .slider-img {
     height: 100vh;
     object-fit: cover;
@@ -48,13 +74,78 @@ body {
 
 .carousel-caption {
     background: rgba(0, 0, 0, 0.4);
+    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    top: 0;
 }
 
-@media (max-width:768px) {
+.hero_font1 {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-heading {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.8rem;
+}
+
+/* Cars */
+.car-card {
+    transition: 0.3s;
+    border: none;
+    overflow: hidden;
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.car-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Gallery */
+.gallery-item {
+    height: 250px;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
+    filter: brightness(80%);
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+
+/* Mobile */
+@media(max-width:991px) {
+
+    .navbar-nav {
+        background: #0f172a;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+
+    .navbar .nav-link {
+        margin: 10px 0;
+    }
+
+}
+
+@media(max-width:768px) {
 
     .slider-img {
         height: 70vh;
@@ -64,56 +155,4 @@ body {
         font-size: 2rem;
     }
 
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-}
-
-/* Car Cards */
-.car-card {
-    transition: 0.3s ease;
-    overflow: hidden;
-    border: none;
-}
-
-.car-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
-}
-
-.car-card img {
-    height: 200px;
-    object-fit: cover;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.1);
-    filter: brightness(80%);
-}
-
-.gallery-item {
-    height: 250px;
-    /* Fixed height for symmetry */
-}
-
-.gallery-item img {
-    height: 100%;
-    object-fit: cover;
-}
-
-#services h2 {
-    font-family: 'Poppins';
-}
-
-#gallery,
-.hero_font1,
-#cars,
-#about h2 {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-section {
-    padding: 80px 0;
 }
